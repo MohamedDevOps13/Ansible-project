@@ -66,6 +66,7 @@
 
     - name: Load Schema
       community.mysql.mysql_db:
+        state: import
         name: all
         target: /app/schema/backend.sql
         login_user: root
