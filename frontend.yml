@@ -19,7 +19,7 @@
 
     - name: Create App Directory
       ansible.builtin.file:
-        path: usr/share/nginx/html
+        path: /usr/share/nginx/html
         state: directory
 
     # Instead of using two tasks, ( 1 task to copy the zipped file to the target server in tmp directory,
@@ -34,7 +34,7 @@
     - name: Download & Extract Application content
       ansible.builtin.unarchive:
         src: https://expense-artifacts.s3.amazonaws.com/frontend.zip
-        dest: usr/share/nginx/html
+        dest: /usr/share/nginx/html
         remote_src: yes
 
     - name: Start Nginx server
